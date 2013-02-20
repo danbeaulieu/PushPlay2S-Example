@@ -12,10 +12,13 @@ object ApplicationBuild extends Build {
     jdbc,
     anorm
   )
+  
+  val PushPlay2S = play.Project(
+    appName + "-pushPlay2S", appVersion, path = file("PushPlay2S"))
 
 
   val main = play.Project(appName, appVersion, appDependencies).settings(
     // Add your own project settings here      
-  )
+  ).dependsOn(PushPlay2S)
 
 }

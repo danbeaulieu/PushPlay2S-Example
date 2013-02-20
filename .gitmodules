@@ -1,0 +1,3 @@
+[submodule "modules/PushPlay2S"]
+	path = modules/PushPlay2S
+	url = git@github.com:danbeaulieu/PushPlay2S.git

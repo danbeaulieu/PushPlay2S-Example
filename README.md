@@ -65,10 +65,11 @@ project/Build.scala should look something like:
 </pre>
 
 modify conf/application.conf to include PushPlay2S configuration parameters, something like:
+(They currently don't mean anything, but are required and will be meaningful in the future)
 <pre>
-  pusher.appId
-  pusher.key
-  pusher.secret
+pusher.appId="someexample"
+pusher.app_key="foobar123"
+pusher.secret_key="7893471290032"
 </pre>
 
 Add a new route to the PushPlay2S project in conf/routes:

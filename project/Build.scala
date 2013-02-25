@@ -12,13 +12,18 @@ object ApplicationBuild extends Build {
     jdbc,
     anorm
   )
+
+  val pushplay2sDeps = Seq(
+    "com.typesafe" %% "play-plugins-redis" % "2.1-1-RC2"
+  )
   
-  val PushPlay2S = play.Project(
-    appName + "-pushPlay2S", appVersion, path = file("PushPlay2S"))
+  val pushplay2s = play.Project(
+    appName + "-pushplay2s", appVersion, pushplay2sDeps, path = file("modules/PushPlay2S"))
 
 
   val main = play.Project(appName, appVersion, appDependencies).settings(
     // Add your own project settings here      
-  ).dependsOn(PushPlay2S)
+  ).dependsOn(pushplay2s).aggregate(pushplay2s)
+
 
 }
